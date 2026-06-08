@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [3.0.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v2.1.0...v3.0.0) (2026-06-08)
+### Features
+
+* [**breaking**] introduce respondable error contract ([563ad72](https://github.com/leoweyr/go-http-api-contract-io/commit/563ad72424dbedc02c7ef214b2702a803b9eda62)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [2.1.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v2.0.1...v2.1.0) (2026-05-11)
 ### Features
 
