@@ -5,11 +5,13 @@ import (
 	"strings"
 
 	validation "github.com/go-playground/validator/v10"
+
+	"go.leoweyr.com/go-http-api-contract-io/v3/response"
 )
 
 type Engine struct {
-	validationLibraryEngine  *validation.Validate
-	errorFormatter           *ErrorFormatter
+	validationLibraryEngine *validation.Validate
+	errorFormatter          *ErrorFormatter
 }
 
 func extractJSONTagName(structField reflect.StructField) string {
@@ -39,8 +41,8 @@ func NewEngine() *Engine {
 
 	var errorFormatter *ErrorFormatter = NewErrorFormatter()
 	var engine *Engine = &Engine{
-		validationLibraryEngine:  validationLibraryEngine,
-		errorFormatter:           errorFormatter,
+		validationLibraryEngine: validationLibraryEngine,
+		errorFormatter:          errorFormatter,
 	}
 
 	return engine
@@ -50,6 +52,8 @@ func (engine *Engine) ValidateStruct(payload any) error {
 	return engine.validationLibraryEngine.Struct(payload)
 }
 
-func (engine *Engine) FormatValidationErrors(validationError error) map[string]string {
-	return engine.errorFormatter.FormatValidationErrors(validationError)
+func (engine *Engine) FormatValidationError(validationError error) response.RespondableError {
+	var details map[string]string = engine.errorFormatter.FormatValidationErrors(validationError)
+
+	return NewValidationError(details)
 }

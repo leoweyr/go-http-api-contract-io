@@ -1,7 +1,5 @@
 package response
 
-var validationFailedMessage string = "VALIDATION_FAILED"
-
 type ErrorResponseBuilder struct{}
 
 func NewErrorResponseBuilder() *ErrorResponseBuilder {
@@ -11,6 +9,10 @@ func NewErrorResponseBuilder() *ErrorResponseBuilder {
 }
 
 func (errorResponseBuilder *ErrorResponseBuilder) buildErrorBody(message string, details map[string]string) ErrorBody {
+	if details == nil {
+		details = map[string]string{}
+	}
+
 	var errorBody ErrorBody = ErrorBody{
 		Message: message,
 		Details: details,
@@ -27,6 +29,6 @@ func (errorResponseBuilder *ErrorResponseBuilder) BuildErrorResponse(message str
 	return errorResponse
 }
 
-func (errorResponseBuilder *ErrorResponseBuilder) BuildValidationFailedErrorResponse(validationDetails map[string]string) ErrorResponse {
-	return errorResponseBuilder.BuildErrorResponse(validationFailedMessage, validationDetails)
+func (errorResponseBuilder *ErrorResponseBuilder) BuildErrorResponseFromError(respondableError RespondableError) ErrorResponse {
+	return errorResponseBuilder.BuildErrorResponse(respondableError.Message(), respondableError.Details())
 }
