@@ -14,10 +14,16 @@ type Engine struct {
 	errorFormatter          *ErrorFormatter
 }
 
-func extractJSONTagName(structField reflect.StructField) string {
+func extractFieldDisplayName(structField reflect.StructField) string {
 	var rawJSONTagName string = structField.Tag.Get("json")
 
 	if rawJSONTagName == "" {
+		var rawHeaderTagName string = structField.Tag.Get("header")
+
+		if rawHeaderTagName != "" && rawHeaderTagName != "-" {
+			return rawHeaderTagName
+		}
+
 		return structField.Name
 	}
 
@@ -31,13 +37,13 @@ func extractJSONTagName(structField reflect.StructField) string {
 	return primaryJSONTagName
 }
 
-func registerJSONTagName(validationLibraryEngine *validation.Validate) {
-	validationLibraryEngine.RegisterTagNameFunc(extractJSONTagName)
+func registerFieldDisplayName(validationLibraryEngine *validation.Validate) {
+	validationLibraryEngine.RegisterTagNameFunc(extractFieldDisplayName)
 }
 
 func NewEngine() *Engine {
 	var validationLibraryEngine *validation.Validate = validation.New()
-	registerJSONTagName(validationLibraryEngine)
+	registerFieldDisplayName(validationLibraryEngine)
 
 	var errorFormatter *ErrorFormatter = NewErrorFormatter()
 	var engine *Engine = &Engine{
@@ -56,4 +62,10 @@ func (engine *Engine) FormatValidationError(validationError error) response.Resp
 	var details map[string]string = engine.errorFormatter.FormatValidationErrors(validationError)
 
 	return NewValidationError(details)
+}
+
+func (engine *Engine) FormatHeaderValidationError(validationError error) response.RespondableError {
+	var details map[string]string = engine.errorFormatter.FormatValidationErrors(validationError)
+
+	return NewHeaderValidationError(details)
 }
