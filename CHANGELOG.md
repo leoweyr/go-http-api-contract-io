@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [3.2.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.1.0...v3.2.0) (2026-06-13)
+### Features
+
+* add method to emit headers from a DTO ([87865c1](https://github.com/leoweyr/go-http-api-contract-io/commit/87865c1d665a9ef536dcf21f74be79fb10ecb896)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [3.1.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.0.0...v3.1.0) (2026-06-13)
 ### Features
 
