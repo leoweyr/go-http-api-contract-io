@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [3.1.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.0.0...v3.1.0) (2026-06-13)
+### Features
+
+* add header binding and 400-mapped header validation error ([9dffca8](https://github.com/leoweyr/go-http-api-contract-io/commit/9dffca8d46197d9e47d8508bc008274ce90ba38c)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [3.0.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v2.1.0...v3.0.0) (2026-06-08)
 ### Features
 
