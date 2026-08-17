@@ -9,8 +9,10 @@ permissions:
 
 jobs:
   call-publish:
-    uses: leoweyr/github-release-workflow/.github/workflows/reusable-publish-release.yml@develop
+    uses: leoweyr/github-release-workflow/.github/workflows/reusable-publish-release.yml@v2.1.0
     with:
+      main-branch: 'master'
+      development-branch: 'develop'
       trb-repository: 'ODCLAB/odyssey-plan'
       trb-project-node-name: 'Go HTTP API Contract IO'
     secrets:
