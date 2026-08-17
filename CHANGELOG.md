@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+# [3.3.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.2.0...v3.3.0) (2026-08-17)
+### Features
+
+* support http client ([8ecc51f](https://github.com/leoweyr/go-http-api-contract-io/commit/8ecc51fb7842e088f91834cbaa62844e09ab61b1)) [@leoweyr](https://github.com/leoweyr)
+
+
+### DevOps
+
+* upgrade release automation to leoweyr/github-release-workflow v2.1.0 ([5d470c3](https://github.com/leoweyr/go-http-api-contract-io/commit/5d470c34b76c6d3699e9d6833010b3b4a69091e6)) [@leoweyr](https://github.com/leoweyr)
+* correct release workflow version references ([f8f1421](https://github.com/leoweyr/go-http-api-contract-io/commit/f8f14215c4ac41ecb640cd49ae66018db795b18a)) [@leoweyr](https://github.com/leoweyr)
+
+
+### Documentation
+
+* add go module badge ([8b186a2](https://github.com/leoweyr/go-http-api-contract-io/commit/8b186a23e8fe2f702416fbd8b6dd37f8f5c322ef)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [3.2.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.1.0...v3.2.0) (2026-06-13)
 ### Features
 
