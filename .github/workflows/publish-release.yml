@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   call-publish:
-    uses: leoweyr/github-release-workflow/.github/workflows/reusable-publish-release.yml@2.1.0
+    uses: leoweyr/github-release-workflow/.github/workflows/reusable-publish-release.yml@v2.1.0
     with:
       main-branch: 'master'
       development-branch: 'develop'
