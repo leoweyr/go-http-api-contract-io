@@ -6,7 +6,7 @@ import (
 
 	validation "github.com/go-playground/validator/v10"
 
-	"go.leoweyr.com/go-http-api-contract-io/v3/response"
+	"go.leoweyr.com/go-http-api-contract-io/v4/response"
 )
 
 type Engine struct {

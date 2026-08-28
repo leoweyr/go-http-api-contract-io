@@ -3,7 +3,7 @@ package validator
 import (
 	"net/http"
 
-	"go.leoweyr.com/go-http-api-contract-io/v3/response"
+	"go.leoweyr.com/go-http-api-contract-io/v4/response"
 )
 
 const validationFailedMessage string = "VALIDATION_FAILED"
@@ -35,6 +35,6 @@ func (validationError *ValidationError) Message() string {
 	return validationFailedMessage
 }
 
-func (validationError *ValidationError) Details() map[string]string {
+func (validationError *ValidationError) Details() any {
 	return validationError.details
 }
