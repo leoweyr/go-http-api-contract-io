@@ -1,16 +1,28 @@
 package response
 
+import "reflect"
+
 type ErrorResponseBuilder struct{}
 
-func NewErrorResponseBuilder() *ErrorResponseBuilder {
-	var errorResponseBuilder *ErrorResponseBuilder = &ErrorResponseBuilder{}
+var sharedErrorResponseBuilder *ErrorResponseBuilder = &ErrorResponseBuilder{}
 
-	return errorResponseBuilder
+// SharedErrorResponseBuilder returns the shared ErrorResponseBuilder singleton.
+func SharedErrorResponseBuilder() *ErrorResponseBuilder {
+	return sharedErrorResponseBuilder
 }
 
-func (errorResponseBuilder *ErrorResponseBuilder) buildErrorBody(message string, details map[string]string) ErrorBody {
+func (errorResponseBuilder *ErrorResponseBuilder) buildErrorBody(message string, details any) ErrorBody {
 	if details == nil {
-		details = map[string]string{}
+		details = map[string]any{}
+	} else {
+		var detailsValue reflect.Value = reflect.ValueOf(details)
+
+		switch detailsValue.Kind() {
+		case reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Pointer, reflect.Slice:
+			if detailsValue.IsNil() {
+				details = map[string]any{}
+			}
+		}
 	}
 
 	var errorBody ErrorBody = ErrorBody{
@@ -21,7 +33,7 @@ func (errorResponseBuilder *ErrorResponseBuilder) buildErrorBody(message string,
 	return errorBody
 }
 
-func (errorResponseBuilder *ErrorResponseBuilder) BuildErrorResponse(message string, details map[string]string) ErrorResponse {
+func (errorResponseBuilder *ErrorResponseBuilder) BuildErrorResponse(message string, details any) ErrorResponse {
 	var errorResponse ErrorResponse = ErrorResponse{
 		Error: errorResponseBuilder.buildErrorBody(message, details),
 	}
