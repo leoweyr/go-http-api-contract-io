@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [4.0.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.3.0...v4.0.0) (2026-08-28)
+### Features
+
+* [**breaking**] allow error responses to carry arbitrary details ([675a7a6](https://github.com/leoweyr/go-http-api-contract-io/commit/675a7a6c8ec377c8156d5f50c5f53fcea29f18e1)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [3.3.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.2.0...v3.3.0) (2026-08-17)
 ### Features
 
