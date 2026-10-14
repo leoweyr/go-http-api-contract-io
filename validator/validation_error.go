@@ -3,7 +3,7 @@ package validator
 import (
 	"net/http"
 
-	"go.leoweyr.com/go-http-api-contract-io/v4/response"
+	"go.leoweyr.com/go-http-api-contract-io/v5/response"
 )
 
 const validationFailedMessage string = "VALIDATION_FAILED"
