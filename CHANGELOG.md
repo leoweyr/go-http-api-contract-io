@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [5.0.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v4.1.0...v5.0.0) (2026-10-14)
+### Features
+
+* [**breaking**] add built-in regexp and UTF-8 validation rules to the shared engine ([a4eaf1f](https://github.com/leoweyr/go-http-api-contract-io/commit/a4eaf1fed92f2ce955451113ac33450d183d8026)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [4.1.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v4.0.0...v4.1.0) (2026-10-14)
 ### Features
 
