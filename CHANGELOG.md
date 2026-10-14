@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [4.1.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v4.0.0...v4.1.0) (2026-10-14)
+### Features
+
+* add composable middleware chains for HTTP servers ([3ad33a6](https://github.com/leoweyr/go-http-api-contract-io/commit/3ad33a616a997476a46885a6579a15b83798c79c)) [@leoweyr](https://github.com/leoweyr)
+
+
+
 # [4.0.0](https://github.com/leoweyr/go-http-api-contract-io/compare/v3.3.0...v4.0.0) (2026-08-28)
 ### Features
 
